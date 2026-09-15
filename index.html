@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>YUSORA — The World Marketplace</title>
 
 <style>
@@ -11,7 +10,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -20,7 +19,7 @@ body{
 }
 
 header{
-    background:#ffffff;
+    background:white;
     border-bottom:1px solid #e5e7eb;
     position:sticky;
     top:0;
@@ -30,7 +29,7 @@ header{
 .navbar{
     max-width:1200px;
     margin:auto;
-    height:72px;
+    height:70px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -40,8 +39,6 @@ header{
 .logo{
     font-size:27px;
     font-weight:900;
-    letter-spacing:-1px;
-    color:#111827;
 }
 
 .logo span{
@@ -51,32 +48,30 @@ header{
 .nav-links{
     display:flex;
     gap:25px;
-    align-items:center;
 }
 
 .nav-links a{
     text-decoration:none;
     color:#374151;
-    font-size:14px;
     font-weight:600;
+    font-size:14px;
 }
 
 .nav-buttons{
     display:flex;
-    gap:10px;
+    gap:8px;
 }
 
 .btn{
-    border:none;
+    border:0;
     border-radius:10px;
-    padding:11px 18px;
-    font-weight:700;
+    padding:11px 17px;
+    font-weight:bold;
     cursor:pointer;
 }
 
 .login{
     background:#f1f2f5;
-    color:#111827;
 }
 
 .register{
@@ -89,7 +84,7 @@ header{
 .hero{
     background:linear-gradient(135deg,#111827,#312e81,#635bff);
     color:white;
-    padding:90px 20px;
+    padding:85px 20px;
 }
 
 .hero-content{
@@ -97,14 +92,14 @@ header{
     margin:auto;
     display:grid;
     grid-template-columns:1.2fr .8fr;
-    gap:50px;
+    gap:40px;
     align-items:center;
 }
 
 .hero h1{
     font-size:58px;
     line-height:1.05;
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .hero h1 span{
@@ -112,16 +107,16 @@ header{
 }
 
 .hero p{
-    font-size:18px;
-    line-height:1.7;
     max-width:600px;
+    line-height:1.7;
+    font-size:18px;
     color:#e5e7eb;
 }
 
 .hero-buttons{
-    margin-top:30px;
+    margin-top:28px;
     display:flex;
-    gap:15px;
+    gap:12px;
     flex-wrap:wrap;
 }
 
@@ -139,7 +134,6 @@ header{
 .hero-card{
     background:rgba(255,255,255,.12);
     border:1px solid rgba(255,255,255,.2);
-    backdrop-filter:blur(15px);
     padding:35px;
     border-radius:25px;
 }
@@ -147,10 +141,6 @@ header{
 .hero-card h3{
     font-size:25px;
     margin-bottom:15px;
-}
-
-.hero-card p{
-    font-size:15px;
 }
 
 /* SEARCH */
@@ -172,15 +162,15 @@ header{
 
 .search-box input{
     flex:1;
-    border:none;
-    outline:none;
+    border:0;
+    outline:0;
     padding:15px;
     font-size:16px;
 }
 
 .search-box button{
+    border:0;
     background:#635bff;
-    border:none;
     color:white;
     padding:0 25px;
     border-radius:10px;
@@ -198,7 +188,6 @@ section{
 .section-title{
     display:flex;
     justify-content:space-between;
-    align-items:center;
     margin-bottom:25px;
 }
 
@@ -226,23 +215,11 @@ section{
     text-align:center;
     border-radius:15px;
     border:1px solid #e5e7eb;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.category:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .category-icon{
     font-size:35px;
     margin-bottom:10px;
-}
-
-.category p{
-    font-weight:700;
-    font-size:14px;
 }
 
 /* PRODUCTS */
@@ -258,12 +235,6 @@ section{
     border-radius:16px;
     overflow:hidden;
     border:1px solid #e5e7eb;
-    transition:.2s;
-}
-
-.product:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 30px rgba(0,0,0,.1);
 }
 
 .product-img{
@@ -280,7 +251,6 @@ section{
 }
 
 .product-info h3{
-    font-size:16px;
     margin-bottom:8px;
 }
 
@@ -302,12 +272,12 @@ section{
     color:white;
     max-width:none;
     padding:80px 20px;
+    text-align:center;
 }
 
 .seller-content{
-    max-width:1100px;
+    max-width:700px;
     margin:auto;
-    text-align:center;
 }
 
 .seller-content h2{
@@ -316,8 +286,6 @@ section{
 }
 
 .seller-content p{
-    max-width:650px;
-    margin:auto;
     color:#d1d5db;
     line-height:1.7;
 }
@@ -336,13 +304,12 @@ section{
     bottom:20px;
     width:60px;
     height:60px;
+    border:0;
     border-radius:50%;
-    border:none;
     background:#635bff;
     color:white;
     font-size:25px;
     cursor:pointer;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
     z-index:2000;
 }
 
@@ -367,7 +334,7 @@ section{
 }
 
 .chat-body{
-    height:250px;
+    height:230px;
     padding:20px;
 }
 
@@ -386,16 +353,132 @@ section{
 
 .chat-input input{
     flex:1;
-    border:none;
+    border:0;
     padding:14px;
-    outline:none;
+    outline:0;
 }
 
 .chat-input button{
-    border:none;
+    border:0;
     background:#635bff;
     color:white;
     padding:0 15px;
+}
+
+/* REGISTER MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(8px);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:5000;
+}
+
+.modal-box{
+    width:100%;
+    max-width:450px;
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:15px;
+    border:0;
+    background:#f3f4f6;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.modal-logo{
+    text-align:center;
+    font-size:30px;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.modal-logo span{
+    color:#635bff;
+}
+
+.modal-box h2{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.modal-subtitle{
+    text-align:center;
+    color:#6b7280;
+    margin-bottom:25px;
+}
+
+.account-btn{
+    width:100%;
+    padding:16px;
+    margin-bottom:12px;
+    border:1px solid #e5e7eb;
+    background:white;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.account-btn:hover{
+    border-color:#635bff;
+}
+
+.divider{
+    text-align:center;
+    color:#9ca3af;
+    margin:20px 0;
+}
+
+.roles{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.role{
+    border:1px solid #e5e7eb;
+    background:#fafafa;
+    border-radius:14px;
+    padding:20px 10px;
+    cursor:pointer;
+    text-align:center;
+}
+
+.role:hover{
+    border-color:#635bff;
+    background:#f5f3ff;
+}
+
+.role-icon{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.role strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.role small{
+    color:#6b7280;
 }
 
 /* FOOTER */
@@ -417,11 +500,6 @@ footer{
 footer h3{
     color:white;
     margin-bottom:10px;
-}
-
-footer p{
-    font-size:14px;
-    line-height:1.7;
 }
 
 /* MOBILE */
@@ -452,29 +530,8 @@ footer p{
 
 @media(max-width:550px){
 
-    .navbar{
-        height:65px;
-    }
-
-    .logo{
-        font-size:23px;
-    }
-
-    .nav-buttons .btn{
-        padding:9px 12px;
-        font-size:12px;
-    }
-
-    .hero{
-        padding:65px 20px;
-    }
-
     .hero h1{
         font-size:38px;
-    }
-
-    .hero p{
-        font-size:16px;
     }
 
     .categories{
@@ -490,28 +547,18 @@ footer p{
         height:150px;
     }
 
-    .product-info{
-        padding:13px;
-    }
-
-    .product-info h3{
-        font-size:14px;
-    }
-
-    .price{
-        font-size:17px;
-    }
-
     .chat{
-        right:10px;
-        bottom:85px;
         width:calc(100% - 20px);
+        right:10px;
+    }
+
+    .roles{
+        grid-template-columns:1fr;
     }
 
     .footer-content{
         flex-direction:column;
     }
-
 }
 </style>
 </head>
@@ -535,15 +582,13 @@ YUS<span>ORA</span>
 
 <div class="nav-buttons">
 <button class="btn login" onclick="login()">Login</button>
-<button class="btn register" onclick="register()">Register</button>
+<button class="btn register" onclick="openRegister()">Register</button>
 </div>
 
 </div>
 
 </header>
 
-
-<!-- HERO -->
 
 <div class="hero">
 
@@ -564,18 +609,17 @@ from around the world.
 
 <div class="hero-buttons">
 
-<button class="btn shop-btn" onclick="scrollProducts()">
+<button class="btn shop-btn" onclick="goProducts()">
 Start Shopping
 </button>
 
-<button class="btn sell-btn" onclick="seller()">
+<button class="btn sell-btn" onclick="openRegister()">
 Become a Seller
 </button>
 
 </div>
 
 </div>
-
 
 <div class="hero-card">
 
@@ -588,11 +632,7 @@ and grow your online store — all in one place.
 
 <br>
 
-<p>
-🛒 Buyers &nbsp; • &nbsp;
-🏪 Sellers &nbsp; • &nbsp;
-💬 Support
-</p>
+<p>🛒 Buyers • 🏪 Sellers • 💬 Support</p>
 
 </div>
 
@@ -600,18 +640,13 @@ and grow your online store — all in one place.
 
 </div>
 
-
-<!-- SEARCH -->
 
 <div class="search-section">
 
 <div class="search-box">
 
-<input
-id="searchInput"
-type="text"
-placeholder="Search products, brands or businesses..."
->
+<input id="searchInput"
+placeholder="Search products, brands or businesses...">
 
 <button onclick="searchProducts()">Search</button>
 
@@ -620,144 +655,99 @@ placeholder="Search products, brands or businesses..."
 </div>
 
 
-<!-- CATEGORIES -->
-
 <section id="categories">
 
 <div class="section-title">
-
 <h2>Explore Categories</h2>
-
 <a href="#">View All</a>
-
 </div>
-
 
 <div class="categories">
 
 <div class="category">
 <div class="category-icon">📱</div>
-<p>Electronics</p>
+<strong>Electronics</strong>
 </div>
 
 <div class="category">
 <div class="category-icon">👕</div>
-<p>Fashion</p>
+<strong>Fashion</strong>
 </div>
 
 <div class="category">
 <div class="category-icon">🏠</div>
-<p>Home</p>
+<strong>Home</strong>
 </div>
 
 <div class="category">
 <div class="category-icon">💄</div>
-<p>Beauty</p>
+<strong>Beauty</strong>
 </div>
 
 <div class="category">
 <div class="category-icon">🚗</div>
-<p>Vehicles</p>
+<strong>Vehicles</strong>
 </div>
 
 <div class="category">
 <div class="category-icon">⚽</div>
-<p>Sports</p>
+<strong>Sports</strong>
 </div>
 
 </div>
 
 </section>
 
-
-<!-- PRODUCTS -->
 
 <section id="products">
 
 <div class="section-title">
-
 <h2>Featured Products</h2>
-
 <a href="#">View All</a>
-
 </div>
-
 
 <div class="products">
 
 <div class="product">
-
 <div class="product-img">📱</div>
-
 <div class="product-info">
-
 <h3>Premium Smartphone</h3>
-
 <div class="price">$499</div>
-
 <div class="seller">Verified Seller ⭐</div>
-
 </div>
-
 </div>
-
 
 <div class="product">
-
 <div class="product-img">👟</div>
-
 <div class="product-info">
-
 <h3>Premium Sneakers</h3>
-
 <div class="price">$89</div>
-
 <div class="seller">Verified Seller ⭐</div>
-
 </div>
-
 </div>
-
 
 <div class="product">
-
 <div class="product-img">🎧</div>
-
 <div class="product-info">
-
 <h3>Wireless Headphones</h3>
-
 <div class="price">$59</div>
-
 <div class="seller">Verified Seller ⭐</div>
-
 </div>
-
 </div>
-
 
 <div class="product">
-
 <div class="product-img">⌚</div>
-
 <div class="product-info">
-
 <h3>Smart Watch</h3>
-
 <div class="price">$129</div>
-
 <div class="seller">Verified Seller ⭐</div>
-
 </div>
-
 </div>
 
 </div>
 
 </section>
 
-
-<!-- SELLER -->
 
 <div class="seller-section" id="sell">
 
@@ -771,7 +761,7 @@ or growing company, YUSORA gives you a place to reach
 customers around the world.
 </p>
 
-<button class="btn" onclick="seller()">
+<button class="btn" onclick="openRegister()">
 Start Selling on YUSORA
 </button>
 
@@ -779,8 +769,6 @@ Start Selling on YUSORA
 
 </div>
 
-
-<!-- CUSTOMER SUPPORT -->
 
 <button class="support" onclick="toggleChat()">💬</button>
 
@@ -801,10 +789,7 @@ How can we help you today?
 
 <div class="chat-input">
 
-<input
-id="chatInput"
-placeholder="Ask a question..."
->
+<input id="chatInput" placeholder="Ask a question...">
 
 <button onclick="sendMessage()">Send</button>
 
@@ -813,45 +798,101 @@ placeholder="Ask a question..."
 </div>
 
 
-<!-- FOOTER -->
+<!-- REGISTER WINDOW -->
+
+<div class="modal" id="registerModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeRegister()">×</button>
+
+<div class="modal-logo">
+YUS<span>ORA</span>
+</div>
+
+<h2>Create your YUSORA account</h2>
+
+<p class="modal-subtitle">
+Join the global marketplace
+</p>
+
+<button class="account-btn" onclick="phoneRegister()">
+📱
+<span>
+<strong>Continue with Phone Number</strong><br>
+Use your mobile number
+</span>
+</button>
+
+<button class="account-btn" onclick="googleRegister()">
+🔵
+<span>
+<strong>Continue with Google</strong><br>
+Use your Google account
+</span>
+</button>
+
+<div class="divider">OR</div>
+
+<h3 style="margin-bottom:12px;">
+I want to...
+</h3>
+
+<div class="roles">
+
+<button class="role" onclick="buyerRegister()">
+
+<div class="role-icon">🛒</div>
+
+<strong>Buy on YUSORA</strong>
+
+<small>
+Discover products and shop
+</small>
+
+</button>
+
+<button class="role" onclick="sellerRegister()">
+
+<div class="role-icon">🏪</div>
+
+<strong>Sell on YUSORA</strong>
+
+<small>
+Start your online business
+</small>
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
 
 <footer>
 
 <div class="footer-content">
 
 <div>
-
 <h3>YUSORA</h3>
-
-<p>
-The World Marketplace.<br>
-Buy. Sell. Connect Globally.
-</p>
-
+<p>The World Marketplace.</p>
+<p>Buy. Sell. Connect Globally.</p>
 </div>
 
 <div>
-
 <h3>Marketplace</h3>
-
-<p>
-Shop<br>
-Categories<br>
-Become a Seller
-</p>
-
+<p>Shop</p>
+<p>Categories</p>
+<p>Become a Seller</p>
 </div>
 
 <div>
-
 <h3>Support</h3>
-
-<p>
-Customer Service<br>
-Help Center<br>
-Safety & Security
-</p>
-
+<p>Customer Service</p>
+<p>Help Center</p>
+<p>Safety & Security</p>
 </div>
 
 </div>
@@ -861,12 +902,71 @@ Safety & Security
 
 <script>
 
-function scrollProducts(){
+function goProducts(){
 
 document.getElementById("products")
-.scrollIntoView({
-behavior:"smooth"
-});
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+
+function openRegister(){
+
+document.getElementById("registerModal")
+.style.display="flex";
+
+}
+
+
+function closeRegister(){
+
+document.getElementById("registerModal")
+.style.display="none";
+
+}
+
+
+function phoneRegister(){
+
+alert(
+"Phone registration will use secure OTP verification when we connect the real YUSORA account system."
+);
+
+}
+
+
+function googleRegister(){
+
+alert(
+"Google registration will be connected when we add real authentication."
+);
+
+}
+
+
+function buyerRegister(){
+
+alert(
+"Buyer account selected. We will build the buyer account next."
+);
+
+}
+
+
+function sellerRegister(){
+
+alert(
+"Seller account selected. We will build the seller dashboard next."
+);
+
+}
+
+
+function login(){
+
+alert(
+"YUSORA login will be connected to real authentication in the next stage."
+);
 
 }
 
@@ -875,15 +975,10 @@ function toggleChat(){
 
 const chat=document.getElementById("chat");
 
-if(chat.style.display==="block"){
-
-chat.style.display="none";
-
-}else{
-
-chat.style.display="block";
-
-}
+chat.style.display =
+chat.style.display==="block"
+? "none"
+: "block";
 
 }
 
@@ -892,11 +987,16 @@ function sendMessage(){
 
 const input=document.getElementById("chatInput");
 
-if(input.value.trim()==="") return;
+if(input.value.trim()===""){
+
+alert("Please type your question.");
+
+return;
+
+}
 
 alert(
-"Thanks for contacting YUSORA Customer Service. "+
-"Live support will be connected in the full version."
+"Your question has been received by YUSORA Customer Service."
 );
 
 input.value="";
@@ -904,49 +1004,23 @@ input.value="";
 }
 
 
-function login(){
-
-alert(
-"YUSORA Login will be connected to real account authentication in the next stage."
-);
-
-}
-
-
-function register(){
-
-alert(
-"Choose how you want to register: Phone Number or Google."
-);
-
-}
-
-
-function seller(){
-
-alert(
-"Seller registration will be available in the next stage."
-);
-
-}
-
-
 function searchProducts(){
 
-const value=
-document.getElementById("searchInput").value;
+const input=
+document.getElementById("searchInput");
 
-if(value.trim()===""){
+if(input.value.trim()===""){
 
-alert("Please enter something to search.");
+alert("Please enter a product or business name.");
 
 return;
 
 }
 
 alert(
-"Searching YUSORA for: "+value+
-"\n\nReal product search will be connected in the marketplace stage."
+"YUSORA search:\n\n" +
+input.value +
+"\n\nReal product search will be connected soon."
 );
 
 }
@@ -954,4 +1028,4 @@ alert(
 </script>
 
 </body>
-  </html>
+    </html>
