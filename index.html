@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YUSORA — The World Marketplace</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f7f8fa;
+    color:#111827;
+}
+
+header{
+    background:#ffffff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:-1px;
+    color:#111827;
+}
+
+.logo span{
+    color:#635bff;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#374151;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.btn{
+    border:none;
+    border-radius:10px;
+    padding:11px 18px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.login{
+    background:#f1f2f5;
+    color:#111827;
+}
+
+.register{
+    background:#635bff;
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#111827,#312e81,#635bff);
+    color:white;
+    padding:90px 20px;
+}
+
+.hero-content{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.05;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:#c4b5fd;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    max-width:600px;
+    color:#e5e7eb;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.shop-btn{
+    background:white;
+    color:#312e81;
+}
+
+.sell-btn{
+    background:rgba(255,255,255,.15);
+    color:white;
+    border:1px solid rgba(255,255,255,.3);
+}
+
+.hero-card{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(15px);
+    padding:35px;
+    border-radius:25px;
+}
+
+.hero-card h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.hero-card p{
+    font-size:15px;
+}
+
+/* SEARCH */
+
+.search-section{
+    max-width:1000px;
+    margin:-30px auto 50px;
+    padding:0 20px;
+    position:relative;
+}
+
+.search-box{
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    display:flex;
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    padding:15px;
+    font-size:16px;
+}
+
+.search-box button{
+    background:#635bff;
+    border:none;
+    color:white;
+    padding:0 25px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* SECTIONS */
+
+section{
+    max-width:1200px;
+    margin:70px auto;
+    padding:0 20px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.section-title a{
+    color:#635bff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* CATEGORIES */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:15px;
+}
+
+.category{
+    background:white;
+    padding:25px 10px;
+    text-align:center;
+    border-radius:15px;
+    border:1px solid #e5e7eb;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.category:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.category-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.category p{
+    font-weight:700;
+    font-size:14px;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid #e5e7eb;
+    transition:.2s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+}
+
+.product-img{
+    height:210px;
+    background:linear-gradient(135deg,#e5e7eb,#c7d2fe);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:65px;
+}
+
+.product-info{
+    padding:18px;
+}
+
+.product-info h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.seller{
+    color:#6b7280;
+    font-size:13px;
+}
+
+/* SELLER */
+
+.seller-section{
+    background:#111827;
+    color:white;
+    max-width:none;
+    padding:80px 20px;
+}
+
+.seller-content{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.seller-content h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.seller-content p{
+    max-width:650px;
+    margin:auto;
+    color:#d1d5db;
+    line-height:1.7;
+}
+
+.seller-content button{
+    margin-top:25px;
+    background:#635bff;
+    color:white;
+}
+
+/* CUSTOMER SERVICE */
+
+.support{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:none;
+    background:#635bff;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    z-index:2000;
+}
+
+.chat{
+    display:none;
+    position:fixed;
+    right:20px;
+    bottom:90px;
+    width:330px;
+    background:white;
+    border-radius:18px;
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+    overflow:hidden;
+    z-index:1999;
+}
+
+.chat-header{
+    background:#635bff;
+    color:white;
+    padding:18px;
+    font-weight:bold;
+}
+
+.chat-body{
+    height:250px;
+    padding:20px;
+}
+
+.chat-message{
+    background:#f3f4f6;
+    padding:12px;
+    border-radius:10px;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.chat-input{
+    display:flex;
+    border-top:1px solid #eee;
+}
+
+.chat-input input{
+    flex:1;
+    border:none;
+    padding:14px;
+    outline:none;
+}
+
+.chat-input button{
+    border:none;
+    background:#635bff;
+    color:white;
+    padding:0 15px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#0b1120;
+    color:#9ca3af;
+    padding:50px 20px;
+}
+
+.footer-content{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+footer h3{
+    color:white;
+    margin-bottom:10px;
+}
+
+footer p{
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero-content{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px){
+
+    .navbar{
+        height:65px;
+    }
+
+    .logo{
+        font-size:23px;
+    }
+
+    .nav-buttons .btn{
+        padding:9px 12px;
+        font-size:12px;
+    }
+
+    .hero{
+        padding:65px 20px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .product-img{
+        height:150px;
+    }
+
+    .product-info{
+        padding:13px;
+    }
+
+    .product-info h3{
+        font-size:14px;
+    }
+
+    .price{
+        font-size:17px;
+    }
+
+    .chat{
+        right:10px;
+        bottom:85px;
+        width:calc(100% - 20px);
+    }
+
+    .footer-content{
+        flex-direction:column;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+YUS<span>ORA</span>
+</div>
+
+<nav class="nav-links">
+<a href="#">Home</a>
+<a href="#categories">Categories</a>
+<a href="#products">Products</a>
+<a href="#sell">Sell</a>
+</nav>
+
+<div class="nav-buttons">
+<button class="btn login" onclick="login()">Login</button>
+<button class="btn register" onclick="register()">Register</button>
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+<div>
+
+<h1>
+Buy. Sell.<br>
+<span>Connect Globally.</span>
+</h1>
+
+<p>
+Welcome to YUSORA — a global marketplace where buyers
+discover products and businesses connect with customers
+from around the world.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn shop-btn" onclick="scrollProducts()">
+Start Shopping
+</button>
+
+<button class="btn sell-btn" onclick="seller()">
+Become a Seller
+</button>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<h3>🌎 One Marketplace</h3>
+
+<p>
+Discover products, connect with businesses,
+and grow your online store — all in one place.
+</p>
+
+<br>
+
+<p>
+🛒 Buyers &nbsp; • &nbsp;
+🏪 Sellers &nbsp; • &nbsp;
+💬 Support
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-section">
+
+<div class="search-box">
+
+<input
+id="searchInput"
+type="text"
+placeholder="Search products, brands or businesses..."
+>
+
+<button onclick="searchProducts()">Search</button>
+
+</div>
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+<div class="section-title">
+
+<h2>Explore Categories</h2>
+
+<a href="#">View All</a>
+
+</div>
+
+
+<div class="categories">
+
+<div class="category">
+<div class="category-icon">📱</div>
+<p>Electronics</p>
+</div>
+
+<div class="category">
+<div class="category-icon">👕</div>
+<p>Fashion</p>
+</div>
+
+<div class="category">
+<div class="category-icon">🏠</div>
+<p>Home</p>
+</div>
+
+<div class="category">
+<div class="category-icon">💄</div>
+<p>Beauty</p>
+</div>
+
+<div class="category">
+<div class="category-icon">🚗</div>
+<p>Vehicles</p>
+</div>
+
+<div class="category">
+<div class="category-icon">⚽</div>
+<p>Sports</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<div class="section-title">
+
+<h2>Featured Products</h2>
+
+<a href="#">View All</a>
+
+</div>
+
+
+<div class="products">
+
+<div class="product">
+
+<div class="product-img">📱</div>
+
+<div class="product-info">
+
+<h3>Premium Smartphone</h3>
+
+<div class="price">$499</div>
+
+<div class="seller">Verified Seller ⭐</div>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-img">👟</div>
+
+<div class="product-info">
+
+<h3>Premium Sneakers</h3>
+
+<div class="price">$89</div>
+
+<div class="seller">Verified Seller ⭐</div>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-img">🎧</div>
+
+<div class="product-info">
+
+<h3>Wireless Headphones</h3>
+
+<div class="price">$59</div>
+
+<div class="seller">Verified Seller ⭐</div>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-img">⌚</div>
+
+<div class="product-info">
+
+<h3>Smart Watch</h3>
+
+<div class="price">$129</div>
+
+<div class="seller">Verified Seller ⭐</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SELLER -->
+
+<div class="seller-section" id="sell">
+
+<div class="seller-content">
+
+<h2>Turn Your Business Into a Global Store</h2>
+
+<p>
+Whether you're an individual seller, small business,
+or growing company, YUSORA gives you a place to reach
+customers around the world.
+</p>
+
+<button class="btn" onclick="seller()">
+Start Selling on YUSORA
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CUSTOMER SUPPORT -->
+
+<button class="support" onclick="toggleChat()">💬</button>
+
+<div class="chat" id="chat">
+
+<div class="chat-header">
+YUSORA Customer Service
+</div>
+
+<div class="chat-body">
+
+<div class="chat-message">
+👋 Hello! Welcome to YUSORA Customer Service.<br><br>
+How can we help you today?
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+id="chatInput"
+placeholder="Ask a question..."
+>
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+
+<h3>YUSORA</h3>
+
+<p>
+The World Marketplace.<br>
+Buy. Sell. Connect Globally.
+</p>
+
+</div>
+
+<div>
+
+<h3>Marketplace</h3>
+
+<p>
+Shop<br>
+Categories<br>
+Become a Seller
+</p>
+
+</div>
+
+<div>
+
+<h3>Support</h3>
+
+<p>
+Customer Service<br>
+Help Center<br>
+Safety & Security
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function scrollProducts(){
+
+document.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function toggleChat(){
+
+const chat=document.getElementById("chat");
+
+if(chat.style.display==="block"){
+
+chat.style.display="none";
+
+}else{
+
+chat.style.display="block";
+
+}
+
+}
+
+
+function sendMessage(){
+
+const input=document.getElementById("chatInput");
+
+if(input.value.trim()==="") return;
+
+alert(
+"Thanks for contacting YUSORA Customer Service. "+
+"Live support will be connected in the full version."
+);
+
+input.value="";
+
+}
+
+
+function login(){
+
+alert(
+"YUSORA Login will be connected to real account authentication in the next stage."
+);
+
+}
+
+
+function register(){
+
+alert(
+"Choose how you want to register: Phone Number or Google."
+);
+
+}
+
+
+function seller(){
+
+alert(
+"Seller registration will be available in the next stage."
+);
+
+}
+
+
+function searchProducts(){
+
+const value=
+document.getElementById("searchInput").value;
+
+if(value.trim()===""){
+
+alert("Please enter something to search.");
+
+return;
+
+}
+
+alert(
+"Searching YUSORA for: "+value+
+"\n\nReal product search will be connected in the marketplace stage."
+);
+
+}
+
+</script>
+
+</body>
+  </html>
